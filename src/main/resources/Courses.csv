@@ -1,0 +1,8 @@
+subject,courseName,courseCode,credits,instructorLName
+Math,Calculus I,MA-100,4,Leonard
+Math,Calculus II,MA-200,4,Satvat
+Math,Calculus III,MA-300,4,Leonard
+Math,Differential Equations,MA-400,Satvat
+Computer Science,Programming I,CS-100,Rahimi
+Computer Science,Programming II,CS-200,Obetz
+Computer Science,Programming III,CS-300,Rahimi

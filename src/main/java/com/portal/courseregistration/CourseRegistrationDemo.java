@@ -15,6 +15,16 @@ public class CourseRegistrationDemo {
 	public static void main(String[] args) {
 		// Java Mail Sender (part of the Spring Framework) used to send confirmation email
 		SpringApplication.run(CourseRegistrationDemo.class, args);
+
+		// Comment out new courses after initial build to prevent repeats
+		CourseBuilder.newCourse("src/main/resources/Courses.csv",
+				"Math" + "," + "Calculus I" + "," + "MA-100" + "," + "4" + "," + "Satvat"
+				);
+		Instructor instructor = new Instructor();
+
+
+
+
 	}
 
 	/*
