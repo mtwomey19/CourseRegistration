@@ -21,6 +21,7 @@ public class CourseRegistrationDemo {
 	Function purpose:
 		- call sendEmail method from EmailSender class
 		- input message contents
+		- @EventListener needed because of static context of main method
 	 */
 	@EventListener(ApplicationReadyEvent.class)
 	public void sendMail() {
