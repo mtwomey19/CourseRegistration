@@ -6,7 +6,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
 
-import java.util.ArrayList;
 
 @SpringBootApplication
 public class CourseRegistrationDemo {
@@ -32,8 +31,13 @@ public class CourseRegistrationDemo {
 		CourseFinder courseFinder = new CourseFinder();
 		courseFinder.startRegistration();
 		String searchInput = courseFinder.collectSearchInformation("Subject");
-		courseFinder.startFormatting("src/main/resources/Courses.csv", searchInput, 0);
+		courseFinder.startFormatting("src/main/resources/Courses.csv", searchInput, 0, "Subject");
 
+		Register register = new Register();
+		register.registrationPrompt();
+		register.registrationCheck();
+
+		register.repeatCourseRegistrationProcess("src/main/resources/Courses.csv", 0, "Subject");
 
 
 

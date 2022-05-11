@@ -21,7 +21,7 @@ public class Person {
         this.id = generateId(); // id set at initialization of Person object
     }
 
-    private int generateId() {
+    public int generateId() {
         double id = (Math.random() * 1000000000); // converts double into size of int
         return (int) Math.round(id); // rounds remaining decimal places to make id a whole number
     }

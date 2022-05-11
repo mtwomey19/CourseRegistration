@@ -53,7 +53,7 @@ public class CourseFinder {
     /*
     Function purpose: Narrow down course offerings based on user search input
      */
-    public ArrayList<String[]> returnSearchResults(String filePath, String searchInput, int categoryIndex) {
+    public ArrayList<String[]> returnSearchResults(String filePath, String searchInput, int categoryIndex, String category) {
 
         ArrayList<String[]> courseList = removeNullValues(filePath);
         String[] individualCourseData;
@@ -67,14 +67,32 @@ public class CourseFinder {
             }
         }
         exportList = courseList; // set static exportList to preserve refined list
+        // When search does not turn up any matches, ask again
+        String newInput = "";
+        if (courseList.size() == 0) {
+            System.out.print("No courses match your search results. Type 'c' to continue or type 'e' to exit: ");
+            if (input.nextLine().equals("c")) {
+                newInput = collectSearchInformation(category);
+                System.out.println("newInput: " + newInput);
+                updateCourseList(filePath, newInput, categoryIndex, category);
+                startFormatting(filePath, newInput, categoryIndex, category);
+            }
+            else {
+                System.exit(0);
+            }
+        }
+
         return courseList;
     }
 
     /*
     Function purpose: updates the course list used for formatting by calling return search results
      */
-    public ArrayList<String[]> updateCourseList(String filePath, String searchInput, int categoryIndex) {
-        return returnSearchResults(filePath, searchInput, categoryIndex);
+    public ArrayList<String[]> updateCourseList(String filePath,
+                                                String searchInput,
+                                                int categoryIndex,
+                                                String category) {
+        return returnSearchResults(filePath, searchInput, categoryIndex, category);
     }
 
     /*
@@ -98,8 +116,8 @@ public class CourseFinder {
     /*
     Function purpose: trigger formatting procedure by making for easy call in demo class
      */
-    public void startFormatting(String filePath, String searchInput, int categoryIndex) {
-        formatResults(updateCourseList(filePath, searchInput, categoryIndex));
+    public void startFormatting(String filePath, String searchInput, int categoryIndex, String category) {
+        formatResults(updateCourseList(filePath, searchInput, categoryIndex, category));
     }
 
     /*

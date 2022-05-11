@@ -8,6 +8,7 @@ public class Student extends Person {
     Properties
      */
 
+    private int studentId;
     private float gpa;
     private int totalCredits;
     private ArrayList<Course> coursesCompleted;
@@ -16,7 +17,9 @@ public class Student extends Person {
     Constructors
      */
 
-    public Student() {}
+    public Student() {
+        this.studentId = generateId();
+    }
 
     public Student(float gpa, int totalCredits, ArrayList<Course> coursesCompleted) {
         this.gpa = gpa;
@@ -25,8 +28,30 @@ public class Student extends Person {
     }
 
     /*
+    Function purpose: student id numbers will be even, instructor id numbers will be odd
+     */
+    @Override
+    public int generateId() {
+        double id = (Math.random() * 1000000000); // converts double into size of int
+        int studentId = (int) Math.round(id); // rounds remaining decimal places to make id a whole number
+
+        if (studentId % 2 != 0) {
+            studentId += 1;
+        }
+        return studentId;
+    }
+
+    /*
     Getters & Setters
      */
+
+    public int getStudentId() {
+        return studentId;
+    }
+
+    public void setStudentId(int studentId) {
+        this.studentId = studentId;
+    }
 
     public float getGpa() {
         return gpa;
