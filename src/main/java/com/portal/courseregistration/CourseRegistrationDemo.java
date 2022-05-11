@@ -27,6 +27,11 @@ public class CourseRegistrationDemo {
 		Login login = new Login();
 		login.signIn(login.determineUserType());
 
+		CourseFinder courseFinder = new CourseFinder();
+		courseFinder.startRegistration();
+		String searchInput = courseFinder.collectSearchInformation("Subject");
+		courseFinder.returnSearchResults("src/main/resources/Courses.csv", searchInput, 0);
+
 
 
 
