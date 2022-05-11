@@ -6,6 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
 
+import java.util.ArrayList;
+
 @SpringBootApplication
 public class CourseRegistrationDemo {
 
@@ -17,9 +19,9 @@ public class CourseRegistrationDemo {
 		SpringApplication.run(CourseRegistrationDemo.class, args);
 
 		// Comment out new courses after initial build to prevent repeats
-		CourseBuilder.newCourse("src/main/resources/Courses.csv",
-				"Math" + "," + "Calculus I" + "," + "MA-100" + "," + "4" + "," + "Satvat"
-				);
+//		CourseBuilder.newCourse("src/main/resources/Courses.csv",
+//				"Math" + "," + "Calculus I" + "," + "MA-100" + "," + "4" + "," + "Satvat"
+//				);
 
 		// Begin Student Login
 		System.out.println("\n\nCOURSE REGISTRATION\n\n");
@@ -30,7 +32,7 @@ public class CourseRegistrationDemo {
 		CourseFinder courseFinder = new CourseFinder();
 		courseFinder.startRegistration();
 		String searchInput = courseFinder.collectSearchInformation("Subject");
-		courseFinder.returnSearchResults("src/main/resources/Courses.csv", searchInput, 0);
+		courseFinder.startFormatting("src/main/resources/Courses.csv", searchInput, 0);
 
 
 

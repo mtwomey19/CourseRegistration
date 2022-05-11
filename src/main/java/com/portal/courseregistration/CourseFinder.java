@@ -1,6 +1,7 @@
 package com.portal.courseregistration;
 
 import com.portal.util.CSVFunctions;
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -35,9 +36,7 @@ public class CourseFinder {
         System.out.print("Type 's' to search for courses, type 'e' to exit: ");
         String proceedToRegistration = input.nextLine();
 
-        if (proceedToRegistration.equals("s")) {
-            System.out.println();
-        } else {
+        if (!proceedToRegistration.equals("s")) {
             System.out.println("...Exiting Course Registration Portal...");
             System.exit(0);
         }
@@ -72,6 +71,13 @@ public class CourseFinder {
     }
 
     /*
+    Function purpose: updates the course list used for formatting by calling return search results
+     */
+    public ArrayList<String[]> updateCourseList(String filePath, String searchInput, int categoryIndex) {
+        return returnSearchResults(filePath, searchInput, categoryIndex);
+    }
+
+    /*
     Function purpose: remove null values from 2-D array sourced from CSV file to improve the aesthetics of the output
      */
     private ArrayList<String[]> removeNullValues(String filePath) {
@@ -89,15 +95,39 @@ public class CourseFinder {
         return refinedCourseList;
     }
 
+    /*
+    Function purpose: trigger formatting procedure by making for easy call in demo class
+     */
+    public void startFormatting(String filePath, String searchInput, int categoryIndex) {
+        formatResults(updateCourseList(filePath, searchInput, categoryIndex));
+    }
 
+    /*
+    Function purpose: extract search result data to be displayed and pass it through the format method
+     */
+    public void formatResults(ArrayList<String[]> refinedCourseList) {
+        for (int i = 0; i < refinedCourseList.size(); i++) {
+            format(refinedCourseList.get(i));
+        }
+    }
 
+    /*
+    Function purpose: center data in column and rows
+     */
+    public void format(String[] columnData) {
+        String header = "\n";
 
-
+        for (int i = 0; i < columnData.length; i++) {
+            header += StringUtils.center(columnData[i], 20);
+        }
+        System.out.println(header);
+    }
 
 
     /*
     Getters & Setters
      */
+
 
     public String getSubject() {
         return subject;
@@ -137,5 +167,29 @@ public class CourseFinder {
 
     public void setInstructorLastName(String instructorLastName) {
         this.instructorLastName = instructorLastName;
+    }
+
+    public ArrayList<String> getSearchedValues() {
+        return searchedValues;
+    }
+
+    public void setSearchedValues(ArrayList<String> searchedValues) {
+        this.searchedValues = searchedValues;
+    }
+
+    public ArrayList<String[]> getCourseList() {
+        return courseList;
+    }
+
+    public void setCourseList(ArrayList<String[]> courseList) {
+        this.courseList = courseList;
+    }
+
+    public static ArrayList<String[]> getExportList() {
+        return exportList;
+    }
+
+    public static void setExportList(ArrayList<String[]> exportList) {
+        CourseFinder.exportList = exportList;
     }
 }
