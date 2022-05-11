@@ -20,7 +20,12 @@ public class CourseRegistrationDemo {
 		CourseBuilder.newCourse("src/main/resources/Courses.csv",
 				"Math" + "," + "Calculus I" + "," + "MA-100" + "," + "4" + "," + "Satvat"
 				);
-		Instructor instructor = new Instructor();
+
+		// Begin Student Login
+		System.out.println("\n\nCOURSE REGISTRATION\n\n");
+
+		Login login = new Login();
+		login.signIn(login.determineUserType());
 
 
 

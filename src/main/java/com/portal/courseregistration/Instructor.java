@@ -2,9 +2,17 @@ package com.portal.courseregistration;
 
 public class Instructor extends Person {
 
+    /*
+    Properties
+     */
+
     private int numYearsProfessor;
     private double salary;
     private String subjectArea;
+
+    /*
+    Constructors
+     */
 
     public Instructor() {}
 

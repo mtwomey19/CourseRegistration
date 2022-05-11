@@ -1,11 +1,20 @@
 package com.portal.courseregistration;
 
 public class Course {
+
+    /*
+    Properties
+     */
+
     private String subject;
     private String courseName;
     private String courseCode;
     private byte credits;
     private Instructor instructor;
+
+    /*
+    Constructors
+     */
 
     public Course() {}
 

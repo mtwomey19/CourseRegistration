@@ -2,12 +2,20 @@ package com.portal.courseregistration;
 
 public class Person {
 
+    /*
+    Properties
+     */
+
     private int id;
     private String role;
     private String fName;
     private String lName;
     private String email;
     private String password;
+
+    /*
+    Constructor
+     */
 
     public Person() {
         this.id = generateId(); // id set at initialization of Person object
