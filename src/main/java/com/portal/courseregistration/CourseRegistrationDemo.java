@@ -28,6 +28,10 @@
 //		I discovered during this project that there are an infinite number of ways to enhance
 //		a course registration system. In the future, I would like to continue building out the
 //		program, so it can stand alongside a commercial course registration system!
+//		The program is also set up to allow the user to search by course subject. I've made it modular
+//		so parameters can be changed to allow the user to search by different categories. However, after
+//		exams I would like to fine tune the search algorithm to better match the user's search criteria with
+//		the results displayed.
 //
 //
 // Time Spent: 24:30:00
