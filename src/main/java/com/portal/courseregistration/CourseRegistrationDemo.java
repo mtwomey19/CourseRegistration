@@ -7,11 +7,11 @@
 //		or exit at your own discretion.
 // Challenges:
 //      One of the biggest challenges early on was connecting classes while preserving data.
-//      Often I would use composition, however, creating a new instantiating a new object
-//		made many of the values I was hoping to access null. I found ways around this challenge
-//		by storing some of the data I needed in static ArrayLists which preserved the data upon
-//		when accessing data in different classes.
-//		Second, I wanted to save data even when the program ended to give the program a similar
+//      Often I would use composition, however, creating a new object made many of the values
+//      I was hoping to access null. I found ways around this challenge by storing some of
+//      the data I needed in static ArrayLists which preserved the data when accessing it
+//      in different classes.
+//		Second, I wanted to save data even when the program ended to give the application a similar
 //		feel to the course registration system we use at the college. I quickly realized I needed
 //		to store the data in an external source and with minimal database experience I tried working
 //		with CSV files. I found reading and writing to/from CSV files tricky. I tried different
@@ -30,8 +30,8 @@
 //		program, so it can stand alongside a commercial course registration system!
 //		The program is also set up to allow the user to search by course subject. I've made it modular
 //		so parameters can be changed to allow the user to search by different categories. However, after
-//		exams I would like to fine tune the search algorithm to better match the user's search criteria with
-//		the results displayed.
+//		exams I would like to fine tune the search algorithm to better match the user's search criteria
+//		with the results displayed.
 //
 //
 // Time Spent: 24:30:00
