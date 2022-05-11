@@ -83,7 +83,7 @@ public class Register {
                 registrationPrompt();
                 registrationCheck();
             } else {
-                System.out.println("Thank you!");
+                System.out.println("\nThank you!");
                 System.exit(0);
             }
         }
