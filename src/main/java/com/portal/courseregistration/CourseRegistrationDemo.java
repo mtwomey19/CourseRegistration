@@ -23,6 +23,12 @@
 //		understanding of what is happening under the hood yet, so I'm struggling to adjust when the
 //		email is sent. Right now it is sending at the start of the program. After the final exam,
 //		I look forward to learning how to adjust the timing of the email delivery.
+// Note:
+//		This program focuses predominantly on the student side of course registration.
+//		I discovered during this project that there are an infinite number of ways to enhance
+//		a course registration system. In the future, I would like to continue building out the
+//		program, so it can stand alongside a commercial course registration system!
+//
 //
 // Time Spent: 24:30:00
 //
